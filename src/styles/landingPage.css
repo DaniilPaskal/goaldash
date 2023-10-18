@@ -1,0 +1,33 @@
+.key-features-title {
+  color: #07d200;
+  text-align: center;
+}
+
+.landing-description {
+  padding: 1rem;
+}
+
+.landing-features {
+  padding: 3rem;
+}
+
+.landing-page {
+  background-color: #f9faf5;
+  height: auto;
+  position: relative;
+  width: auto;
+}
+
+.landing-welcome {
+  color: #07d200;
+  text-align: center;
+}
+
+.landing-why {
+  padding: 3rem;
+}
+
+.why-title {
+  color: #07d200;
+  text-align: center;
+}
