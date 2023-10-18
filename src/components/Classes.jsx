@@ -72,6 +72,7 @@ export class Goal {
         this.id = -1;
         this.name = name;
         this.endDate = endDate;
+        this.progress = 0;
         this.taskLists = [];
     }
 
