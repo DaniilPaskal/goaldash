@@ -12,6 +12,7 @@ export class Task {
 
 export class TaskList {
     constructor(name) {
+        this.id = -1;
         this.name = name;
         this.head = null;
     }
@@ -60,10 +61,15 @@ export class TaskList {
         prevTask.next = nextTask;
         nextTask.prev = prevTask;  
     }
+
+    setId(id) {
+        this.id = id;
+    }
 }
 
 export class Goal {
     constructor(name, endDate) {
+        this.id = -1;
         this.name = name;
         this.endDate = endDate;
         this.taskLists = [];
@@ -76,5 +82,9 @@ export class Goal {
     removeTaskList(taskList) {
         var index = this.TaskLists.findIndex(taskList);
         taskList.splice(index, 1);
+    }
+
+    setId(id) {
+        this.id = id;
     }
 }
