@@ -3,18 +3,18 @@ import TestGoals from "../data/TestGoals";
 
 const GoalsContext = React.createContext();
 
-export function GoalsProvider({}) {
+export function GoalsProvider({ children }) {
     const [goals, setGoals] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         setGoals(TestGoals);
-    })
+    }, []);
 
     return (
-        <GoalsProvider.Provider value={goals}>
+        <GoalsContext.Provider value={goals}>
             { !loading && children }
-        </GoalsProvider.Provider>
+        </GoalsContext.Provider>
     );
 }
 
