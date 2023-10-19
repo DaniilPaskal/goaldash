@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/landingPage.css";
+import Button from "@mui/material/Button";
 
 const LandingPage = () => {
   return (
@@ -102,6 +103,14 @@ const LandingPage = () => {
           </li>
         </ul>
       </section>
+      <div className="getStarted-btn">
+        <Button variant="contained" style={{ backgroundColor: "#4caf50" }}>
+          GET STARTED
+        </Button>
+      </div>
+      <div className="haveAccount-btn">
+        <Button variant="outlined">I ALREADY HAVE AN ACCOUNT</Button>
+      </div>
     </div>
   );
 };

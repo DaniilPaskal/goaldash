@@ -1,5 +1,17 @@
+.getStarted-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.haveAccount-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
 .key-features-title {
-  color: #07d200;
+  color: #4caf50;
   text-align: center;
 }
 
@@ -19,7 +31,7 @@
 }
 
 .landing-welcome {
-  color: #07d200;
+  color: #4caf50;
   text-align: center;
 }
 
@@ -28,6 +40,6 @@
 }
 
 .why-title {
-  color: #07d200;
+  color: #4caf50;
   text-align: center;
 }
