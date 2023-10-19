@@ -1,9 +1,12 @@
 import { Goal, TaskList, Task } from "./Classes";
 import { useGoals } from "../contexts/GoalsContext";
 
-const goals = useGoals();
+function GetGoals() {
+    return useGoals();
+}
 
 export function saveGoal(goalData) {
+    const goals = GetGoals();
     const newGoal = new Goal(...goalData);
     const index = goals.map((goal) => goal.id).indexOf(newGoal.id);
 
