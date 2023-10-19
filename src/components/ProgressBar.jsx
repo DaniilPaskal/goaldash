@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 
 const ProgressBar = ({ progress }) => {
     const percentage = progress + '%';

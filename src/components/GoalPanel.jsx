@@ -1,7 +1,7 @@
 import { useState } from "react";
 import GoalEditor from "./GoalEditor";
 import ProgressBar from "./ProgressBar";
-import './App.css';
+import '../App.css';
 
 const GoalPanel = ({ goal }) => {
     const [show, setShow] = useState(false);
