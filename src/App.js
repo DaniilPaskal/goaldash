@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import GoalsProvider from './contexts/GoalsContext';
 import LandingPage from "./pages/LandingPage";
+import TaskManagement from "./pages/TaskManagement";
 import "./App.css";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <GoalsProvider>
         <Routes>
           <Route index element={<LandingPage />} />
+          <Route element={<TaskManagement />} />
         </Routes>
       </GoalsProvider>
     </div>
