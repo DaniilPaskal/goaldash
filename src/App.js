@@ -8,8 +8,8 @@ function App() {
     <div className="app">
       <GoalsProvider>
         <Routes>
-          <Route element={<LandingPage />} />
           <Route index element={<TaskManagement />} />
+          <Route element={<LandingPage />} />
         </Routes>
       </GoalsProvider>
     </div>
