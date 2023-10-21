@@ -1,6 +1,7 @@
 import { useState } from "react";
 import GoalEditor from "./GoalEditor";
 import TaskListEditor from "./TaskListEditor";
+import TaskListPanel from "./TaskListPanel";
 import ProgressBar from "./ProgressBar";
 import '../App.css';
 
@@ -22,7 +23,7 @@ const GoalPanel = ({ goal }) => {
             <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} goal={goal} />
 
             {taskLists.map((taskList) => {
-
+                <TaskListPanel taskList={taskList} />
             })}
         </div>
     );
