@@ -9,6 +9,7 @@ export function GoalsProvider({ children }) {
 
     useEffect(() => {
         setGoals(TestGoals);
+        setLoading(false);
     }, []);
 
     return (
