@@ -1,12 +1,6 @@
 import { Goal, TaskList, Task } from "./Classes";
-import { useGoals } from "../contexts/GoalsContext";
 
-function GetGoals() {
-    return useGoals();
-}
-
-export function saveGoal(goalData) {
-    const goals = GetGoals();
+export function saveGoal(goals, goalData) {
     const newGoal = new Goal(goalData.name, goalData.endDate);
     const index = goals.map((goal) => goal.id).indexOf(newGoal.id);
 
@@ -16,4 +10,9 @@ export function saveGoal(goalData) {
         newGoal.setId(goals.length);
         goals.push(newGoal);
     }
+}
+
+export function saveTaskList(goal, taskListData) {
+    const taskList = new TaskList(taskListData.name);
+    goal.addTaskList(taskList);
 }
