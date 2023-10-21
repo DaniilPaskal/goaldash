@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Modal } from "bootstrap";
+import { useGoals } from "../contexts/GoalsContext";
 import { saveGoal } from "./DataFunctions";
 
 const emptyGoal = {
@@ -8,6 +9,7 @@ const emptyGoal = {
 };
 
 const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
+    const goals = useGoals();
     const [newGoal, setNewGoal] = useState(goal);
 
     const handleChange = (event) => {
@@ -16,7 +18,7 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
     }
 
     const handleSave = () => {
-        saveGoal(newGoal);
+        saveGoal(goals, newGoal);
     }
 
     const handleDelete = () => {
