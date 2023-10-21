@@ -7,7 +7,7 @@ function GetGoals() {
 
 export function saveGoal(goalData) {
     const goals = GetGoals();
-    const newGoal = new Goal(...goalData);
+    const newGoal = new Goal(goalData.name, goalData.endDate);
     const index = goals.map((goal) => goal.id).indexOf(newGoal.id);
 
     if (index > -1) {
