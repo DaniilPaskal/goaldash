@@ -1,10 +1,12 @@
 import { useState } from "react";
 import GoalEditor from "./GoalEditor";
+import TaskListEditor from "./TaskListEditor";
 import ProgressBar from "./ProgressBar";
 import '../App.css';
 
 const GoalPanel = ({ goal }) => {
-    const [show, setShow] = useState(false);
+    const [showGoalEditor, setShowGoalEditor] = useState(false);
+    const [showTaskListEditor, setShowTaskListEditor] = useState(false);
     const { name, progress, taskLists } = goal;
 
     return (
@@ -13,8 +15,11 @@ const GoalPanel = ({ goal }) => {
             <h2>{progress}% done</h2>
             <ProgressBar progress={progress} />
 
-            <button onClick={() => setShow(true)}>Edit goal</button>
-            <GoalEditor show={show} setShow={setShow} goal={goal} />
+            <button onClick={() => setShowGoalEditor(true)}>Edit goal</button>
+            <GoalEditor show={showGoalEditor} setShow={setShowGoalEditor} goal={goal} />
+
+            <button onClick={() => setShowTaskListEditor(true)}>Add task list</button>
+            <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} goal={goal} />
 
             {taskLists.map((taskList) => {
 
