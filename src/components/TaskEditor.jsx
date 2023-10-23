@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Task } from './Classes';
 import Checkbox from './Checkbox';
+import { saveTask } from './DataFunctions';
 
 const emptyTask = {
     name: '',
@@ -9,7 +10,7 @@ const emptyTask = {
     locked: false
 }
 
-const TaskEditor = ({ show, setShow, task = emptyTask }) => {
+const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     const [newTask, setNewTask] = useState(task);
     const {} = newTask;
 
@@ -19,6 +20,7 @@ const TaskEditor = ({ show, setShow, task = emptyTask }) => {
     }
 
     const handleSave = () => {
+        saveTask(taskList, newTask);
         setShow(false);
     }
 
