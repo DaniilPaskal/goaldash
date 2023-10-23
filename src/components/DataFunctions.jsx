@@ -14,6 +14,11 @@ export function saveGoal(goals, goalData) {
 }
 
 export function saveTaskList(goal, taskListData) {
-    const taskList = new TaskList(taskListData.name);
-    goal.addTaskList(taskList);
+    const newTaskList = new TaskList(taskListData.name);
+    goal.addTaskList(newTaskList);
+}
+
+export function saveTask(taskList, taskData) {
+    const newTask = new Task(taskData.name, taskData.duration, taskData.locked);
+    taskList.insert(newTask, 0);
 }
