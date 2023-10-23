@@ -1,5 +1,4 @@
 import TaskIndicator from './TaskIndicator';
-import './App.css';
 
 const TaskPanel = ({ task }) => {
     const { name } = task;

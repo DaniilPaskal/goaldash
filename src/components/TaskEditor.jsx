@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Task } from './Classes';
 import Checkbox from './Checkbox';
-import './App.css';
 
 const emptyTask = {
     name: '',

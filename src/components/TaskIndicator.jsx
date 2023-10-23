@@ -1,4 +1,4 @@
-import './App.css';
+
 
 const TaskIndicator = ({ status }) => {
     const colors = {
