@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Task } from './Classes';
+import Checkbox from './Checkbox';
 import './App.css';
 
 const emptyTask = {
@@ -19,6 +20,9 @@ const TaskEditor = ({ task = emptyTask }) => {
 
             <label for='duration'>Duration:</label>
             <input type='text' id='duration' name='duration' required />
+
+            <label for='locked'>Locked:</label>
+            <Checkbox name='locked' />
 
             <input type='submit' value='Save' />
         </form>
