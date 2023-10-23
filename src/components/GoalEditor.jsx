@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Modal } from "bootstrap";
+import Modal from 'react-bootstrap/Modal';
 import { useGoals } from "../contexts/GoalsContext";
 import { saveGoal } from "./DataFunctions";
 
 const emptyGoal = {
+    id: -1,
     name: '',
     endDate: ''
 };
@@ -19,6 +20,7 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
 
     const handleSave = () => {
         saveGoal(goals, newGoal);
+        setShow(false);
     }
 
     const handleDelete = () => {
@@ -26,15 +28,20 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
     }
 
     return (
-        <div>
-            <label for='name'>Name:</label>
-            <input type='text' id='name' name='name' defaultValue={newGoal.name} onChange={handleChange} required />
+        <Modal show={show} onHide={() => setShow(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title>Edit goal</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <label for='name'>Name:</label>
+                <input type='text' id='name' name='name' defaultValue={newGoal.name} onChange={handleChange} required />
 
-            <label for='endDate'>End date:</label>
-            <input type='date' id='endDate' name='endDate' defaultValue={newGoal.endDate} onChange={handleChange} required />
+                <label for='endDate'>End date:</label>
+                <input type='date' id='endDate' name='endDate' defaultValue={newGoal.endDate} onChange={handleChange} required />
 
-            <button onClick={handleSave}>Save</button>
-        </div>
+                <button onClick={handleSave}>Save</button>
+            </Modal.Body>
+        </Modal>
     );
 }
 
