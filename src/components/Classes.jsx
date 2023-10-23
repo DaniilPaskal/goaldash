@@ -31,6 +31,19 @@ export class TaskList {
         this.name = name;
     }
 
+    find(task) {
+        var taskNode = this.head;
+
+        while(taskNode) {
+            if (taskNode === task) {
+                return true;
+            }
+            taskNode = taskNode.next;
+        }
+
+        return false;
+    }
+
     insert(task, index) {
         if (index === 0) {
             if (this.head) {
