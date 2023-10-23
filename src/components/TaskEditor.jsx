@@ -13,16 +13,29 @@ const TaskEditor = ({ task = emptyTask }) => {
     const [newTask, setNewTask] = useState(task);
     const {} = newTask;
 
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setNewTask({ ...newTask, [name]: value });
+    }
+
+    const handleSave = () => {
+        
+    }
+
+    const handleDelete = () => {
+
+    }
+
     return (
         <form className='task-form'>
             <label for='name'>Name:</label>
-            <input type='text' id='name' name='name' required />
+            <input type='text' id='name' name='name' onChange={handleChange} required />
 
             <label for='duration'>Duration:</label>
-            <input type='text' id='duration' name='duration' required />
+            <input type='text' id='duration' name='duration' onChange={handleChange} required />
 
             <label for='locked'>Locked:</label>
-            <Checkbox name='locked' />
+            <Checkbox name='locked' handleChange={handleChange} />
 
             <input type='submit' value='Save' />
         </form>
