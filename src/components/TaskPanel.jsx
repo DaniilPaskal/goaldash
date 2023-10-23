@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TaskEditor from './TaskEditor';
 import TaskIndicator from './TaskIndicator';
 
-const TaskPanel = ({ task }) => {
+const TaskPanel = ({ task, taskList }) => {
     const [showTaskEditor, setShowTaskEditor] = useState(false);
     const { name } = task;
 
@@ -11,7 +11,7 @@ const TaskPanel = ({ task }) => {
             <h2>{name}</h2>
 
             <button onClick={() => setShowTaskEditor(true)}>Edit task</button>
-            <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} task={task} />
+            <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} taskList={taskList} task={task} />
         </div>
     );
 }
