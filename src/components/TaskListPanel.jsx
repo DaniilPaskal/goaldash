@@ -5,12 +5,12 @@ import TaskPanel from "./TaskPanel";
 import ProgressBar from "./ProgressBar";
 import '../App.css';
 
-const TaskListPanel = ({ taskList }) => {
+const TaskListPanel = ({ taskList, goal }) => {
     const [showTaskListEditor, setShowTaskListEditor] = useState(false);
     const [showTaskEditor, setShowTaskEditor] = useState(false);
     const { name, head } = taskList;
-    const taskNode = head;
     const taskArray = [];
+    var taskNode = head;
 
     while (taskNode) {
         taskArray.push(taskNode);
@@ -22,13 +22,15 @@ const TaskListPanel = ({ taskList }) => {
             <h1>{name}</h1>
 
             <button onClick={() => setShowTaskListEditor(true)}>Edit task list</button>
-            <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} taskList={taskList} />
+            <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} goal={goal} taskList={taskList} />
 
             <button onClick={() => setShowTaskEditor(true)}>Add task</button>
             <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} taskList={taskList} />
 
             {taskArray.map((task) => {
-                <TaskPanel task={task} />
+                return(
+                    <TaskPanel task={task} taskList={taskList} />
+                )
             })}
             
         </div>
