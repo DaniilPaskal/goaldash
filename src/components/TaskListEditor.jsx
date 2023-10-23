@@ -6,8 +6,8 @@ const emptyTaskList = {
     name: '',
 };
 
-const TaskListEditor = ({ show, setShow, goal, TaskList = emptyTaskList }) => {
-    const [newTaskList, setNewTaskList] = useState(TaskList);
+const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
+    const [newTaskList, setNewTaskList] = useState(taskList);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -15,7 +15,7 @@ const TaskListEditor = ({ show, setShow, goal, TaskList = emptyTaskList }) => {
     }
 
     const handleSave = () => {
-        saveTaskList(goal, newTaskList);
+        saveTaskList(goal, taskList, newTaskList);
         setShow(false);
     }
 
@@ -26,7 +26,7 @@ const TaskListEditor = ({ show, setShow, goal, TaskList = emptyTaskList }) => {
     return (
         <Modal show={show} onHide={() => setShow(false)}>
             <Modal.Header closeButton>
-                <Modal.Title>Edit goal</Modal.Title>
+                <Modal.Title>Edit task list</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <label for='name'>Name:</label>

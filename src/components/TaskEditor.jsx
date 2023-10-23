@@ -20,7 +20,7 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     }
 
     const handleSave = () => {
-        saveTask(taskList, newTask);
+        saveTask(taskList, task, newTask);
         setShow(false);
     }
 
@@ -31,7 +31,7 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     return (
         <Modal show={show} onHide={() => setShow(false)}>
             <Modal.Header closeButton>
-                <Modal.Title>Edit goal</Modal.Title>
+                <Modal.Title>Edit task</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <label for='name'>Name:</label>

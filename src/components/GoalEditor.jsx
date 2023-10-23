@@ -19,7 +19,7 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
     }
 
     const handleSave = () => {
-        saveGoal(goals, newGoal);
+        saveGoal(goals, goal, newGoal);
         setShow(false);
     }
 
