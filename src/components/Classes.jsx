@@ -1,10 +1,11 @@
 export class Task {
-    constructor(name, duration) {
+    constructor(name, duration, locked) {
         this.name = name;
         this.duration = {
             total: duration,
             complete: 0
         };
+        this.locked = locked;
         this.next = null;
         this.prev = null;
     }
@@ -13,11 +14,12 @@ export class Task {
 export class TaskList {
     constructor(name) {
         this.id = -1;
+        this.length = 0;
         this.name = name;
         this.head = null;
     }
 
-    insert(index, task) {
+    insert(task, index) {
         if (index === 0) {
             if (this.head) {
                 task.next = this.head;
@@ -39,6 +41,7 @@ export class TaskList {
         task.prev = prevTask;
         prevTask.next = task;
         nextTask.prev = task;
+        this.length++;
     }
 
     remove(index) {
@@ -60,6 +63,7 @@ export class TaskList {
 
         prevTask.next = nextTask;
         nextTask.prev = prevTask;  
+        this.length--;
     }
 
     setId(id) {
