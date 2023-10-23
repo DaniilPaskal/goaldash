@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
 import { Task } from './Classes';
 import Checkbox from './Checkbox';
 
@@ -8,7 +9,7 @@ const emptyTask = {
     locked: false
 }
 
-const TaskEditor = ({ task = emptyTask }) => {
+const TaskEditor = ({ show, setShow, task = emptyTask }) => {
     const [newTask, setNewTask] = useState(task);
     const {} = newTask;
 
@@ -18,7 +19,7 @@ const TaskEditor = ({ task = emptyTask }) => {
     }
 
     const handleSave = () => {
-        
+        setShow(false);
     }
 
     const handleDelete = () => {
@@ -26,18 +27,23 @@ const TaskEditor = ({ task = emptyTask }) => {
     }
 
     return (
-        <form className='task-form'>
-            <label for='name'>Name:</label>
-            <input type='text' id='name' name='name' onChange={handleChange} required />
+        <Modal show={show} onHide={() => setShow(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title>Edit goal</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <label for='name'>Name:</label>
+                <input type='text' id='name' name='name' onChange={handleChange} required />
 
-            <label for='duration'>Duration:</label>
-            <input type='text' id='duration' name='duration' onChange={handleChange} required />
+                <label for='duration'>Duration:</label>
+                <input type='text' id='duration' name='duration' onChange={handleChange} required />
 
-            <label for='locked'>Locked:</label>
-            <Checkbox name='locked' handleChange={handleChange} />
+                <label for='locked'>Locked:</label>
+                <Checkbox name='locked' handleChange={handleChange} />
 
-            <input type='submit' value='Save' />
-        </form>
+                <button onClick={handleSave}>Save</button>
+            </Modal.Body>
+        </Modal>
     );
 }
 
