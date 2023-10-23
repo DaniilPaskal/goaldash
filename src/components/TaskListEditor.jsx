@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Modal } from "bootstrap";
+import Modal from 'react-bootstrap/Modal';
 import { saveTaskList } from "./DataFunctions";
 
 const emptyTaskList = {
@@ -16,6 +16,7 @@ const TaskListEditor = ({ show, setShow, goal, TaskList = emptyTaskList }) => {
 
     const handleSave = () => {
         saveTaskList(goal, newTaskList);
+        setShow(false);
     }
 
     const handleDelete = () => {
@@ -23,12 +24,17 @@ const TaskListEditor = ({ show, setShow, goal, TaskList = emptyTaskList }) => {
     }
 
     return (
-        <div>
-            <label for='name'>Name:</label>
-            <input type='text' id='name' name='name' defaultValue={newTaskList.name} onChange={handleChange} required />
+        <Modal show={show} onHide={() => setShow(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title>Edit goal</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <label for='name'>Name:</label>
+                <input type='text' id='name' name='name' defaultValue={newTaskList.name} onChange={handleChange} required />
 
-            <button onClick={handleSave}>Save</button>
-        </div>
+                <button onClick={handleSave}>Save</button>
+            </Modal.Body>
+        </Modal>
     );
 }
 
