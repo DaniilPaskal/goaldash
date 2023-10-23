@@ -12,7 +12,7 @@ const GoalPanel = ({ goal }) => {
 
     return (
         <div className='goal-panel'>
-            <h1>{name}</h1>
+            <h2>{name}</h2>
             <h2>{progress}% done</h2>
             <ProgressBar progress={progress} />
 
@@ -23,7 +23,9 @@ const GoalPanel = ({ goal }) => {
             <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} goal={goal} />
 
             {taskLists.map((taskList) => {
-                <TaskListPanel taskList={taskList} />
+                return(
+                    <TaskListPanel taskList={taskList} goal={goal} />
+                )
             })}
         </div>
     );
