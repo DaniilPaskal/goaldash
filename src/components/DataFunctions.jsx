@@ -1,24 +1,26 @@
 import { Goal, TaskList, Task } from "./Classes";
 
-export function saveGoal(goals, goalData) {
-    const newGoal = new Goal(goalData.name, goalData.endDate);
-    const index = goals.map((goal) => goal.id).indexOf(goalData.id);
-
-    if (index > -1) {
-        newGoal.setId(goalData.id);
-        goals[index] = newGoal;
+export function saveGoal(goals, goal, newGoal) {
+    if (goals.includes(goal)) {
+        goal.update(newGoal.name, newGoal.endDate);
     } else {
-        newGoal.setId(goals.length);
-        goals.push(newGoal);
+        goals.push(new Goal(newGoal.name, newGoal.endDate));
     }
 }
 
-export function saveTaskList(goal, taskListData) {
-    const newTaskList = new TaskList(taskListData.name);
-    goal.addTaskList(newTaskList);
+export function saveTaskList(goal, taskList, newTaskList) {
+    if (goal.taskLists.includes(taskList)) {
+        taskList.update(newTaskList.name);
+    } else {
+        goal.addTaskList(new TaskList(newTaskList.name));
+    }
 }
 
-export function saveTask(taskList, taskData) {
-    const newTask = new Task(taskData.name, taskData.duration, taskData.locked);
-    taskList.insert(newTask, 0);
+export function saveTask(taskList, task, newTask) {
+    console.log(taskList.head)
+    if (taskList.find(task)) {
+        task.update(newTask.name, newTask.duration, newTask.locked);
+    } else {
+        taskList.insert(new Task(newTask.name, newTask.duration, newTask.locked), 0);
+    }
 }
