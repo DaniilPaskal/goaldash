@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Task } from './Classes';
 import Checkbox from './Checkbox';
 import { saveTask } from './DataFunctions';
+import '../styles/Editors.css';
 
 const emptyTask = {
     name: '',

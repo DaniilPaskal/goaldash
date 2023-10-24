@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { useGoals } from "../contexts/GoalsContext";
 import { saveGoal } from "./DataFunctions";
+import '../styles/Editors.css';
 
 const emptyGoal = {
     id: -1,

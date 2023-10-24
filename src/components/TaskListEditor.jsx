@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { saveTaskList } from "./DataFunctions";
+import '../styles/Editors.css';
 
 const emptyTaskList = {
     name: '',
