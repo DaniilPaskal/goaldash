@@ -3,7 +3,7 @@ import GoalEditor from "./GoalEditor";
 import TaskListEditor from "./TaskListEditor";
 import TaskListPanel from "./TaskListPanel";
 import ProgressBar from "./ProgressBar";
-import '../App.css';
+import '../styles/TaskManagementPage.css';
 
 const GoalPanel = ({ goal }) => {
     const [showGoalEditor, setShowGoalEditor] = useState(false);

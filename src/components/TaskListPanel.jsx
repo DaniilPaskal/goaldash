@@ -3,7 +3,7 @@ import TaskListEditor from "./TaskListEditor";
 import TaskEditor from "./TaskEditor";
 import TaskPanel from "./TaskPanel";
 import ProgressBar from "./ProgressBar";
-import '../App.css';
+import '../styles/TaskManagementPage.css';
 
 const TaskListPanel = ({ taskList, goal }) => {
     const [showTaskListEditor, setShowTaskListEditor] = useState(false);

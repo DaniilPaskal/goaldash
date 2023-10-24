@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import TaskEditor from './TaskEditor';
-import TaskIndicator from './TaskIndicator';
+import '../styles/TaskManagementPage.css';
 
 const TaskPanel = ({ task, taskList }) => {
     const [showTaskEditor, setShowTaskEditor] = useState(false);
