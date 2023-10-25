@@ -21,6 +21,6 @@ export function saveTask(taskList, task, newTask) {
     if (taskList.find(task)) {
         task.update(newTask.name, newTask.duration, newTask.locked);
     } else {
-        taskList.insert(new Task(newTask.name, newTask.duration, newTask.locked), 0);
+        taskList.insert(new Task(newTask.name, newTask.duration, newTask.locked), taskList.length);
     }
 }
