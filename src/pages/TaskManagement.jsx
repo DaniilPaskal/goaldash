@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useGoals } from '../contexts/GoalsContext';
 import GoalEditor from '../components/GoalEditor';
 import GoalPanel from '../components/GoalPanel';
+import '../styles/TaskManagementPage.css';
 
 const TaskManagement = () => {
     const [show, setShow] = useState(false);
