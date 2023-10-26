@@ -1,3 +1,10 @@
+export class DailyTask {
+    constructor(name, duration) {
+        this.name = name;
+        this.duration = duration;
+    }
+}
+
 export class Task {
     constructor(name, duration, locked) {
         this.name = name;
