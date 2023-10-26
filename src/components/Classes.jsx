@@ -6,7 +6,6 @@ export class Task {
             complete: 0
         };
         this.locked = locked;
-        this.complete = false;
         this.next = null;
         this.prev = null;
     }
@@ -24,6 +23,10 @@ export class Task {
 export class TaskList {
     constructor(name) {
         this.length = 0;
+        this.duration = {
+            total: 0,
+            complete: 0
+        }
         this.name = name;
         this.head = null;
     }
@@ -67,6 +70,9 @@ export class TaskList {
         task.prev = prevTask;
         prevTask.next = task;
         nextTask.prev = task;
+
+        this.duration.total += task.duration.total;
+        this.duration.complete += task.duration.complete;
         this.length++;
     }
 
@@ -89,6 +95,9 @@ export class TaskList {
 
         prevTask.next = nextTask;
         nextTask.prev = prevTask;  
+        
+        this.duration.total -= removeTask.duration.total;
+        this.duration.complete -= removeTask.duration.complete;
         this.length--;
     }
 }
