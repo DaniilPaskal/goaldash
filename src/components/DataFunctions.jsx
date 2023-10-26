@@ -1,4 +1,4 @@
-import { Goal, TaskList, Task } from "./Classes";
+import { Goal, TaskList, Task, DailyTask } from "./Classes";
 
 export function saveGoal(goals, goal, newGoal) {
     if (goals.includes(goal)) {
@@ -23,4 +23,26 @@ export function saveTask(taskList, task, newTask) {
     } else {
         taskList.insert(new Task(newTask.name, newTask.duration, newTask.locked), taskList.length);
     }
+}
+
+export function createDailyTasks(taskList, endDate) {
+    const { duration, head } = taskList;
+    const startDate = new Date();
+    const timeDifference = Math.abs(endDate - startDate);
+    const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    const tasksPerDay = Math.ceil(duration.total / dayDifference);
+    const dailyTasks = [];
+    
+    var taskNode = taskList.head;
+
+    while(taskNode) {
+        for (var i = 0; i < taskNode.duration.complete; i += tasksPerDay) {
+            const newDailyTask = new DailyTask(taskNode.name, tasksPerDay);
+            dailyTasks.push(newDailyTask);
+        }
+
+        taskNode = taskNode.next;
+    }
+
+    return dailyTasks;
 }
