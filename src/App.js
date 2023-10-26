@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { GoalsProvider } from './contexts/GoalsContext';
 import LandingPage from "./pages/LandingPage";
+import Dashboard from "./pages/dashboard";
 import TaskManagement from "./pages/TaskManagement";
 
 function App() {
@@ -8,8 +9,9 @@ function App() {
     <div className="app">
       <GoalsProvider>
         <Routes>
-          <Route index element={<TaskManagement />} />
-          <Route element={<LandingPage />} />
+          <Route index element={<LandingPage />} />
+          <Route path='dashboard' element={<Dashboard />} />
+          <Route path='task-management' element={<TaskManagement />} />
         </Routes>
       </GoalsProvider>
     </div>
