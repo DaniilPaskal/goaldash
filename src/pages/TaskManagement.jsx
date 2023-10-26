@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useGoals } from '../contexts/GoalsContext';
 import GoalEditor from '../components/GoalEditor';
 import GoalPanel from '../components/GoalPanel';
@@ -10,6 +11,8 @@ const TaskManagement = () => {
 
     return (
         <div>
+            <Link to='/dashboard'>Dashboard</Link>
+            
             <button onClick={() => setShow(true)}>Create goal</button>
             <GoalEditor show={show} setShow={setShow} />
 
