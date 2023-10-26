@@ -13,7 +13,9 @@ const Dashboard = () => {
                 <FontAwesomeIcon icon='fa-solid fa-user' />
                 <FontAwesomeIcon icon='fa-solid fa-bars' />
             </div>
-            <FontAwesomeIcon icon='fa-solid fa-pencil' />
+            <Link to='task-management'>
+                <FontAwesomeIcon icon='fa-solid fa-pencil' />
+            </Link>
 
             {goals.map((goal) => {
                 return (
