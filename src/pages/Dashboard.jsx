@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useGoals } from "../contexts/GoalsContext";
-import GoalPanel from "../components/GoalPanel";
+import GoalDisplay from "../components/GoalDisplay";
 import './App.css';
 
 const Dashboard = () => {
@@ -19,7 +19,7 @@ const Dashboard = () => {
 
             {goals.map((goal) => {
                 return (
-                    <GoalPanel goal={goal} />
+                    <GoalDisplay goal={goal} />
                 );
             })}
         </>
