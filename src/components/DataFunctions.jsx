@@ -25,7 +25,7 @@ export function saveTask(taskList, task, newTask) {
     }
 }
 
-export function createDailyTasks(taskList, endDate) {
+export function getDailyTasks(taskList, endDate) {
     const { duration, head } = taskList;
     const startDate = new Date();
     const timeDifference = Math.abs(endDate - startDate);
