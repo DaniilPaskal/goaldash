@@ -6,7 +6,7 @@ const LandingPage = () => {
     <div className="landing-page">
       <h1 className="landing-welcome">Welcome</h1>
       <section className="landing-description">
-        Goaldish is a simple and straignt forward personal task management app
+        Goaldash is a simple and straightforward personal task management app
         that empowers individuals to take control of their efforts and resources
         to achieve their current goals. Whether you're a professional striving
         to increase productivity, a student managing assignments and deadlines,
@@ -22,7 +22,7 @@ const LandingPage = () => {
             technical levels to use.
           </li>
           <li>
-            <b> Productivity Boost:</b>By keeping tasks organized and having a
+            <b>Productivity Boost:</b> By keeping tasks organized and having a
             clear view of your goals, Goaldash helps boost your productivity and
             efficiency.
           </li>
@@ -32,15 +32,15 @@ const LandingPage = () => {
             partner in success.
           </li>
           <li>
-            <b> Flexibility:</b> Customize the app to match your unique workflow
+            <b>Flexibility:</b> Customize the app to match your unique workflow
             and preferences.
           </li>
           <li>
-            <b> Accessibility: </b> Access your tasks and goals from anywhere,
+            <b>Accessibility:</b> Access your tasks and goals from anywhere,
             whether on your computer, tablet, or smartphone.
           </li>
           <li>
-            <b> Stay on Track: </b> With reminders and notifications, you'll
+            <b>Stay on Track:</b> With reminders and notifications, you'll
             never miss an important task or deadline again. Start managing your
             life effectively and reaching your goals with Goaldash. It's your
             tool for a more organized, productive, and fulfilling life.
@@ -61,9 +61,8 @@ const LandingPage = () => {
             or projects for better structure.
           </li>
           <li>
-            <b>Time Management:</b>
-            Set reminders and due dates to stay on top of your schedule. Use
-            time-blocking techniques to maximize your efficiency.
+            <b>Time Management:</b> Set reminders and due dates to stay on top of your
+            schedule. Use time-blocking techniques to maximize your efficiency.
           </li>
           <li>
             <b>Task Prioritization:</b> Sort and prioritize tasks based on
@@ -80,23 +79,23 @@ const LandingPage = () => {
             such as daily routines, weekly meetings, or monthly bills.
           </li>
           <li>
-            <b> Notes and Attachments: </b> Add notes, descriptions, and
+            <b>Notes and Attachments:</b> Add notes, descriptions, and
             attachments to tasks for additional context and reference.
           </li>
           <li>
-            <b> Customization: </b>Personalize the app's interface and settings
+            <b>Customization:</b>Personalize the app's interface and settings
             to suit your preferences. Choose from different themes and layouts.
           </li>
           <li>
-            <b> Notifications and Reminders:</b> Receive timely reminders and
+            <b>Notifications and Reminders:</b> Receive timely reminders and
             notifications via email, push notifications, or in-app alerts.
           </li>
           <li>
-            <b> Data Sync:</b> Synchronize your tasks and data across multiple
+            <b>Data Sync:</b> Synchronize your tasks and data across multiple
             devices to stay productive on the go.
           </li>
           <li>
-            <b>Data Security: </b> Ensure your data is secure and private. Use
+            <b>Data Security:</b> Ensure your data is secure and private. Use
             secure authentication and data encryption methods to protect your
             information.
           </li>
