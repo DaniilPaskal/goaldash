@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { GoalsProvider } from './contexts/GoalsContext';
 import LandingPage from "./pages/LandingPage";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 import TaskManagement from "./pages/TaskManagement";
 
 function App() {
