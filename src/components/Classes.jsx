@@ -13,6 +13,7 @@ export class Task {
             complete: 0
         };
         this.locked = locked;
+        this.comments = [];
         this.next = null;
         this.prev = null;
     }
