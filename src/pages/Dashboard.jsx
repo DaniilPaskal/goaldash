@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useGoals } from "../contexts/GoalsContext";
 import GoalDisplay from "../components/GoalDisplay";
-import './App.css';
+import '../styles/Dashboard.css';
 
 const Dashboard = () => {
     const goals = useGoals();
