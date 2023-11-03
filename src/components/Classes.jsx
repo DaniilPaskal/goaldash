@@ -2,6 +2,7 @@ export class DailyTask {
     constructor(name, duration) {
         this.name = name;
         this.duration = duration;
+        this.status = 'onTrack';
     }
 }
 
