@@ -9,9 +9,9 @@ function App() {
     <div className="app">
       <GoalsProvider>
         <Routes>
-          <Route element={<LandingPage />} />
+          <Route index element={<LandingPage />} />
           <Route path='dashboard' element={<Dashboard />} />
-          <Route index path='task-management' element={<TaskManagement />} />
+          <Route path='task-management' element={<TaskManagement />} />
         </Routes>
       </GoalsProvider>
     </div>
