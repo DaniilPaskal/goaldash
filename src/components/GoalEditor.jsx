@@ -11,13 +11,9 @@ const emptyGoal = {
 };
 
 const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
-    console.log(goal)
     const goals = useGoals();
-    console.log(goals)
     const [newGoal, setNewGoal] = useState(goal);
-    console.log(newGoal)
     const { name, endDate } = newGoal;
-    console.log(name)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
