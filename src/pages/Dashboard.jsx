@@ -14,7 +14,7 @@ const Dashboard = () => {
                 <FontAwesomeIcon icon='fa-solid fa-user' />
                 <FontAwesomeIcon icon='fa-solid fa-bars' />
             </div>
-            <Link to='task-management'>
+            <Link to='/task-management'>
                 <FontAwesomeIcon icon='fa-solid fa-pencil' />
             </Link>
 
