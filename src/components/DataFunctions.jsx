@@ -1,10 +1,12 @@
 import { Goal, TaskList, Task, DailyTask } from "./Classes";
 
-export function saveGoal(goals, goal, newGoal) {
+export function saveGoal(goals, goal, newGoalData) {
     if (goals.includes(goal)) {
-        goal.update(newGoal.name, newGoal.endDate);
+        goal.update(newGoalData.name, newGoalData.endDate);
     } else {
-        goals.push(new Goal(newGoal.name, newGoal.endDate));
+        const newGoal = new Goal(newGoalData.name, newGoalData.endDate);
+        newGoal.setId(goals.length);
+        goals.push(newGoal);
     }
 }
 
