@@ -11,8 +11,13 @@ const emptyGoal = {
 };
 
 const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
+    console.log(goal)
     const goals = useGoals();
+    console.log(goals)
     const [newGoal, setNewGoal] = useState(goal);
+    console.log(newGoal)
+    const { name, endDate } = newGoal;
+    console.log(name)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -21,6 +26,7 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
 
     const handleSave = () => {
         saveGoal(goals, goal, newGoal);
+        setNewGoal(emptyGoal);
         setShow(false);
     }
 
@@ -35,10 +41,10 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
             </Modal.Header>
             <Modal.Body>
                 <label for='name'>Name:</label>
-                <input type='text' id='name' name='name' defaultValue={newGoal.name} onChange={handleChange} required />
+                <input type='text' id='name' name='name' defaultValue={name} onChange={handleChange} required />
 
                 <label for='endDate'>End date:</label>
-                <input type='date' id='endDate' name='endDate' defaultValue={newGoal.endDate} onChange={handleChange} required />
+                <input type='date' id='endDate' name='endDate' defaultValue={endDate} onChange={handleChange} required />
 
                 <button onClick={handleSave}>Save</button>
             </Modal.Body>
