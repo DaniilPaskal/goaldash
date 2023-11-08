@@ -10,20 +10,22 @@ export function saveGoal(goals, goal, newGoalData) {
     }
 }
 
-export function saveTaskList(goal, taskList, newTaskList) {
+export function saveTaskList(goal, taskList, newTaskListData) {
     if (goal.taskLists.includes(taskList)) {
-        taskList.update(newTaskList.name);
+        taskList.update(newTaskListData.name);
     } else {
-        goal.addTaskList(new TaskList(newTaskList.name));
+        const newTaskList = new TaskList(newTaskListData.name);
+        goal.addTaskList(newTaskList);
     }
 }
 
-export function saveTask(taskList, task, newTask) {
+export function saveTask(taskList, task, newTaskData) {
     console.log(taskList.head)
     if (taskList.find(task)) {
-        task.update(newTask.name, newTask.duration, newTask.locked);
+        task.update(newTaskData.name, newTaskData.duration, newTaskData.locked);
     } else {
-        taskList.insert(new Task(newTask.name, newTask.duration, newTask.locked), taskList.length);
+        const newTask = new Task(newTaskData.name, newTaskData.duration, newTaskData.locked);
+        taskList.insert(newTask, taskList.length);
     }
 }
 
