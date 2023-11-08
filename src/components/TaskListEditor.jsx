@@ -9,6 +9,7 @@ const emptyTaskList = {
 
 const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
     const [newTaskList, setNewTaskList] = useState(taskList);
+    const { name } = newTaskList;
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -17,6 +18,7 @@ const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
 
     const handleSave = () => {
         saveTaskList(goal, taskList, newTaskList);
+        setNewTaskList(emptyTaskList);
         setShow(false);
     }
 
@@ -31,7 +33,7 @@ const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
             </Modal.Header>
             <Modal.Body>
                 <label for='name'>Name:</label>
-                <input type='text' id='name' name='name' defaultValue={newTaskList.name} onChange={handleChange} required />
+                <input type='text' id='name' name='name' defaultValue={name} onChange={handleChange} required />
 
                 <button onClick={handleSave}>Save</button>
             </Modal.Body>
