@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Task } from './Classes';
 import Checkbox from './Checkbox';
-import { saveTask } from './DataFunctions';
+import { saveTask, deleteTask } from './DataFunctions';
 import '../styles/Editors.css';
 
 const emptyTask = {
@@ -27,7 +27,9 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     }
 
     const handleDelete = () => {
-
+        deleteTask(taskList, task);
+        setNewTask(emptyTask);
+        setShow(false);
     }
 
     return (
