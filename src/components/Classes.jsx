@@ -45,16 +45,18 @@ export class TaskList {
     }
 
     find(task) {
+        var index = 0;
         var taskNode = this.head;
 
         while(taskNode) {
             if (taskNode === task) {
-                return true;
+                return index;
             }
             taskNode = taskNode.next;
+            index++;
         }
 
-        return false;
+        return -1;
     }
 
     insert(task, index) {
