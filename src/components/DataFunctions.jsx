@@ -21,7 +21,7 @@ export function saveTaskList(goal, taskList, newTaskListData) {
 
 export function saveTask(taskList, task, newTaskData) {
     console.log(taskList.head)
-    if (taskList.find(task)) {
+    if (taskList.find(task) > -1) {
         task.update(newTaskData.name, newTaskData.duration, newTaskData.locked);
     } else {
         const newTask = new Task(newTaskData.name, newTaskData.duration, newTaskData.locked);
