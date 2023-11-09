@@ -10,14 +10,6 @@ export function saveGoal(goals, goal, newGoalData) {
     }
 }
 
-export function deleteGoal(goals, goal) {
-    const index = goals.indexOf(goal);
-
-    if (index > -1) {
-        goals.splice(index, 1);
-    }
-}
-
 export function saveTaskList(goal, taskList, newTaskListData) {
     if (goal.taskLists.includes(taskList)) {
         taskList.update(newTaskListData.name);
@@ -27,21 +19,29 @@ export function saveTaskList(goal, taskList, newTaskListData) {
     }
 }
 
-export function deleteTaskList(goal, taskList) {
-    const { taskLists } = goal;
-    const index = taskLists.indexOf(taskList);
-
-    if (index > -1) {
-        taskLists.splice(index, 1);
-    }
-}
-
 export function saveTask(taskList, task, newTaskData) {
     if (taskList.find(task) > -1) {
         task.update(newTaskData.name, newTaskData.duration, newTaskData.locked);
     } else {
         const newTask = new Task(newTaskData.name, newTaskData.duration, newTaskData.locked);
         taskList.insert(newTask, taskList.length);
+    }
+}
+
+export function deleteGoal(goals, goal) {
+    const index = goals.indexOf(goal);
+
+    if (index > -1) {
+        goals.splice(index, 1);
+    }
+}
+
+export function deleteTaskList(goal, taskList) {
+    const { taskLists } = goal;
+    const index = taskLists.indexOf(taskList);
+
+    if (index > -1) {
+        taskLists.splice(index, 1);
     }
 }
 
