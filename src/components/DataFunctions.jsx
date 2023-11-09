@@ -27,6 +27,15 @@ export function saveTaskList(goal, taskList, newTaskListData) {
     }
 }
 
+export function deleteTaskList(goal, taskList) {
+    const { taskLists } = goal;
+    const index = taskLists.indexOf(taskList);
+
+    if (index > -1) {
+        taskLists.splice(index, 1);
+    }
+}
+
 export function saveTask(taskList, task, newTaskData) {
     console.log(taskList.head)
     if (taskList.find(task) > -1) {
