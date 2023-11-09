@@ -10,6 +10,14 @@ export function saveGoal(goals, goal, newGoalData) {
     }
 }
 
+export function deleteGoal(goals, goal) {
+    const index = goals.indexOf(goal);
+
+    if (index > -1) {
+        goals.splice(index, 1);
+    }
+}
+
 export function saveTaskList(goal, taskList, newTaskListData) {
     if (goal.taskLists.includes(taskList)) {
         taskList.update(newTaskListData.name);
