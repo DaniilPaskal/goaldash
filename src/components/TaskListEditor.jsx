@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
-import { saveTaskList } from "./DataFunctions";
+import { saveTaskList, deleteTaskList } from "./DataFunctions";
 import '../styles/Editors.css';
 
 const emptyTaskList = {
@@ -23,7 +23,9 @@ const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
     }
 
     const handleDelete = () => {
-
+        deleteTaskList(goal, taskList);
+        setNewTaskList(emptyTaskList);
+        setShow(false);
     }
 
     return (
