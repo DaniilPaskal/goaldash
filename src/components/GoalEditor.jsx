@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { useGoals } from "../contexts/GoalsContext";
-import { saveGoal } from "./DataFunctions";
+import { saveGoal, deleteGoal } from "./DataFunctions";
 import '../styles/Editors.css';
 
 const emptyGoal = {
@@ -27,7 +27,9 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
     }
 
     const handleDelete = () => {
-
+        deleteGoal(goals, goal);
+        setNewGoal(emptyGoal);
+        setShow(false);
     }
 
     return (
