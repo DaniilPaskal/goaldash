@@ -37,12 +37,19 @@ export function deleteTaskList(goal, taskList) {
 }
 
 export function saveTask(taskList, task, newTaskData) {
-    console.log(taskList.head)
     if (taskList.find(task) > -1) {
         task.update(newTaskData.name, newTaskData.duration, newTaskData.locked);
     } else {
         const newTask = new Task(newTaskData.name, newTaskData.duration, newTaskData.locked);
         taskList.insert(newTask, taskList.length);
+    }
+}
+
+export function deleteTask(taskList, task) {
+    const index = taskList.find(task);
+
+    if (index > -1) {
+        taskList.remove(index);
     }
 }
 
