@@ -58,14 +58,23 @@ export function getDailyTasks(taskList, endDate) {
     const startDate = new Date();
     const timeDifference = Math.abs(endDate - startDate);
     const dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-    const tasksPerDay = Math.ceil(duration.total / dayDifference);
+    const tasksPerDay = Math.ceil(duration.total - duration.complete / dayDifference);
     const dailyTasks = [];
     
     var taskNode = taskList.head;
 
     while(taskNode) {
-        for (var i = 0; i < taskNode.duration.complete; i += tasksPerDay) {
-            const newDailyTask = new DailyTask(taskNode.name, tasksPerDay);
+        const { duration } = taskNode;
+        var remainingDuration = duration.total - duration.complete;
+
+        while (remainingDuration > 0) {
+            var taskNum = tasksPerDay;
+
+            if (remainingDuration - tasksPerDay < 0) {
+                taskNum = remainingDuration;
+            }
+
+            const newDailyTask = new DailyTask(taskNode.name, taskNum);
             dailyTasks.push(newDailyTask);
         }
 
