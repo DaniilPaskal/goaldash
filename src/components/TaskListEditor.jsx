@@ -38,6 +38,7 @@ const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
                 <input type='text' id='name' name='name' defaultValue={name} onChange={handleChange} required />
 
                 <button onClick={handleSave}>Save</button>
+                <button onClick={handleDelete}>Delete</button>
             </Modal.Body>
         </Modal>
     );
