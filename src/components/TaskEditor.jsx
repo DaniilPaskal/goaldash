@@ -48,6 +48,7 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
                 <Checkbox name='locked' checked={locked} handleChange={handleChange} />
 
                 <button onClick={handleSave}>Save</button>
+                <button onClick={handleDelete}>Delete</button>
             </Modal.Body>
         </Modal>
     );
