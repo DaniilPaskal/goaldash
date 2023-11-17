@@ -83,3 +83,7 @@ export function getDailyTasks(taskList, endDate) {
 
     return dailyTasks;
 }
+
+export function completeDailyTask(task) {
+    
+}
