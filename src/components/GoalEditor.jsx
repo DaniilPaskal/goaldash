@@ -45,6 +45,7 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
                 <input type='date' id='endDate' name='endDate' defaultValue={endDate} onChange={handleChange} required />
 
                 <button onClick={handleSave}>Save</button>
+                <button onClick={handleDelete}>Delete</button>
             </Modal.Body>
         </Modal>
     );
