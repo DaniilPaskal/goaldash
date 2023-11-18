@@ -7,13 +7,14 @@ export class DailyTask {
 }
 
 export class Task {
-    constructor(name, duration, locked) {
+    constructor(name, duration, locked, taskList) {
         this.name = name;
         this.duration = {
             total: duration,
             complete: 0
         };
         this.locked = locked;
+        this.taskList = taskList;
         this.comments = [];
         this.next = null;
         this.prev = null;
@@ -30,13 +31,14 @@ export class Task {
 }
 
 export class TaskList {
-    constructor(name) {
+    constructor(name, goal) {
         this.length = 0;
         this.duration = {
             total: 0,
             complete: 0
         }
         this.name = name;
+        this.goal = goal;
         this.head = null;
     }
 
