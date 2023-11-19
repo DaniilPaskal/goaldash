@@ -14,14 +14,14 @@ export function saveTaskList(goal, taskList, newTaskListData) {
     if (goal.taskLists.includes(taskList)) {
         taskList.update(newTaskListData.name);
     } else {
-        const newTaskList = new TaskList(newTaskListData.name);
+        const newTaskList = new TaskList(newTaskListData.name, goal);
         goal.addTaskList(newTaskList);
     }
 }
 
 export function saveTask(taskList, task, newTaskData) {
     if (taskList.find(task) > -1) {
-        task.update(newTaskData.name, newTaskData.duration, newTaskData.locked);
+        task.update(newTaskData.name, newTaskData.duration, newTaskData.locked, taskList);
     } else {
         const newTask = new Task(newTaskData.name, newTaskData.duration, newTaskData.locked);
         taskList.insert(newTask, taskList.length);
