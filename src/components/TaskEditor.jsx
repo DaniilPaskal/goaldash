@@ -27,7 +27,7 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     }
 
     const handleDelete = () => {
-        deleteTask(taskList, task);
+        deleteTask(task);
         setNewTask(emptyTask);
         setShow(false);
     }
