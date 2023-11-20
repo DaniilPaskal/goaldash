@@ -36,7 +36,8 @@ export function deleteGoal(goals, goal) {
     }
 }
 
-export function deleteTaskList(goal, taskList) {
+export function deleteTaskList(taskList) {
+    const { goal } = taskList
     const { taskLists } = goal;
     const index = taskLists.indexOf(taskList);
 
@@ -45,7 +46,8 @@ export function deleteTaskList(goal, taskList) {
     }
 }
 
-export function deleteTask(taskList, task) {
+export function deleteTask(task) {
+    const { taskList } = task;
     const index = taskList.find(task);
 
     if (index > -1) {
