@@ -6,8 +6,8 @@ import '../styles/Editors.css';
 
 const emptyGoal = {
     id: -1,
-    name: '',
-    endDate: ''
+    name: null,
+    endDate: null
 };
 
 const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
@@ -21,6 +21,11 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
     }
 
     const handleSave = () => {
+        if (!endDate || endDate <= new Date().getDate()) {
+            alert('Please select a date in the future.');
+            return;
+        }
+
         saveGoal(goals, goal, newGoal);
         setNewGoal(emptyGoal);
         setShow(false);
@@ -38,14 +43,16 @@ const GoalEditor = ({ show, setShow, goal = emptyGoal }) => {
                 <Modal.Title>Edit goal</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <label for='name'>Name:</label>
-                <input type='text' id='name' name='name' defaultValue={name} onChange={handleChange} required />
+                <form name='goalForm' onSubmit={handleSave}>
+                    <label for='name'>Name:</label>
+                    <input type='text' id='name' name='name' defaultValue={name} onChange={handleChange} required />
 
-                <label for='endDate'>End date:</label>
-                <input type='date' id='endDate' name='endDate' defaultValue={endDate} onChange={handleChange} required />
+                    <label for='endDate'>End date:</label>
+                    <input type='date' id='endDate' name='endDate' defaultValue={endDate} onChange={handleChange} required />
 
-                <button onClick={handleSave}>Save</button>
-                <button onClick={handleDelete}>Delete</button>
+                    <input type='submit' value='Save' />
+                    <button onClick={handleDelete}>Delete</button>
+                </form>
             </Modal.Body>
         </Modal>
     );
