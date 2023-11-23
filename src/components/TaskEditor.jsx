@@ -21,6 +21,16 @@ const TaskEditor = ({ show, setShow, taskList, task = emptyTask }) => {
     }
 
     const handleSave = () => {
+        if (name.length === 0) {
+            alert('Please name your goal.');
+            return;
+        }
+
+        if (duration === 0) {
+            alert('Please set a duration.');
+            return;
+        }
+
         saveTask(taskList, task, newTask);
         setNewTask(emptyTask);
         setShow(false);
