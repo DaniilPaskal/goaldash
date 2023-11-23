@@ -17,6 +17,11 @@ const TaskListEditor = ({ show, setShow, goal, taskList = emptyTaskList }) => {
     }
 
     const handleSave = () => {
+        if (name.length === 0) {
+            alert('Please name your goal.');
+            return;
+        }
+
         saveTaskList(goal, taskList, newTaskList);
         setNewTaskList(emptyTaskList);
         setShow(false);
