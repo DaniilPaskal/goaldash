@@ -51,6 +51,10 @@ export function deleteTaskList(taskList) {
 }
 
 export function deleteTask(task) {
+    if (!task.taskList) {
+        return;
+    }
+
     const { taskList } = task;
     const index = taskList.find(task);
 
