@@ -37,7 +37,11 @@ export function deleteGoal(goals, goal) {
 }
 
 export function deleteTaskList(taskList) {
-    const { goal } = taskList
+    if (!taskList.goal) {
+        return;
+    }
+
+    const { goal } = taskList;
     const { taskLists } = goal;
     const index = taskLists.indexOf(taskList);
 
