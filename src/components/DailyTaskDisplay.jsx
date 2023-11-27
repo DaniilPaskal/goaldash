@@ -9,11 +9,9 @@ const DailyTaskDisplay = ({ dailyTask }) => {
 
     }
 
-    const handlePostone = () => {
+    const handlePostpone = () => {
 
     }
-
-    
 
     return (
         <div>
@@ -21,8 +19,8 @@ const DailyTaskDisplay = ({ dailyTask }) => {
             <p>{duration}</p>
             <div>
                 <TaskIndicator status={status} />
-                <button>Done</button>
-                <button>Postpone</button>
+                <button onClick={handleDone}>Done</button>
+                <button onClick={handlePostpone}>Postpone</button>
                 <button onClick={() => setShowTaskEditor(true)}>Edit</button>
 
                 <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} taskList={taskList} task={task} />
