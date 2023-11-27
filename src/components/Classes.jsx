@@ -1,8 +1,9 @@
 export class DailyTask {
-    constructor(name, duration) {
+    constructor(name, duration, task) {
         this.name = name;
         this.duration = duration;
         this.status = 'onTrack';
+        this.task = task;
     }
 }
 
