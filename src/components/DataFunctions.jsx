@@ -84,7 +84,7 @@ export function getDailyTasks(taskList, endDate) {
                 taskNum = remainingDuration;
             }
 
-            const newDailyTask = new DailyTask(taskNode.name, taskNum);
+            const newDailyTask = new DailyTask(taskNode.name, taskNum, taskNode);
             dailyTasks.push(newDailyTask);
         }
 
