@@ -18,7 +18,7 @@ const TaskManagement = () => {
 
             {goals.map((goal) => {
                 return (
-                    <GoalPanel goal={goal} />
+                    <GoalPanel goal={goal} key={goal} />
                 );
             })}
         </div>
