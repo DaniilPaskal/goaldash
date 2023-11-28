@@ -29,7 +29,7 @@ const TaskListPanel = ({ taskList, goal }) => {
 
             {taskArray.map((task) => {
                 return(
-                    <TaskPanel task={task} taskList={taskList} />
+                    <TaskPanel task={task} taskList={taskList} key={task} />
                 )
             })}
             
