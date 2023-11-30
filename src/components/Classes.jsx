@@ -50,6 +50,14 @@ export class TaskList {
         this.name = name;
     }
 
+    updateDuration(duration) {
+        this.duration += duration;
+    }
+
+    incrementProgress(progress) {
+
+    }
+
     find(task) {
         var index = 0;
         var taskNode = this.head;
@@ -88,8 +96,8 @@ export class TaskList {
         prevTask.next = task;
         nextTask.prev = task;
 
-        this.duration.total += task.duration.total;
-        this.duration.complete += task.duration.complete;
+        this.duration += task.duration;
+        this.progress += task.progress;
         this.length++;
     }
 
@@ -113,8 +121,8 @@ export class TaskList {
         prevTask.next = nextTask;
         nextTask.prev = prevTask;  
         
-        this.duration.total -= removeTask.duration.total;
-        this.duration.complete -= removeTask.duration.complete;
+        this.duration -= removeTask.duration;
+        this.progress -= removeTask.progress;
         this.length--;
     }
 }
@@ -137,6 +145,10 @@ export class Goal {
 
     addTaskList(taskList) {
         this.taskLists.push(taskList);
+    }
+
+    updateTaskList(taskList) {
+        
     }
 
     removeTaskList(taskList) {
