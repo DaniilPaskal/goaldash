@@ -15,9 +15,9 @@ export class Task {
         this.locked = locked;
         this.taskList = taskList;
         this.comments = [];
-        this.complete = false;
         this.next = null;
         this.prev = null;
+        this.complete = false;
     }
 
     update(name, duration, locked) {
@@ -38,13 +38,12 @@ export class Task {
 export class TaskList {
     constructor(name, goal) {
         this.length = 0;
-        this.duration = {
-            total: 0,
-            complete: 0
-        }
+        this.duration = 0;
+        this.progress = 0;
         this.name = name;
         this.goal = goal;
         this.head = null;
+        this.complete = false;
     }
 
     update(name) {
@@ -125,8 +124,10 @@ export class Goal {
         this.id = -1;
         this.name = name;
         this.endDate = endDate;
+        this.duration = 0;
         this.progress = 0;
         this.taskLists = [];
+        this.complete = false;
     }
 
     update(name, endDate) {
