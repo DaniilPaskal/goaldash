@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { completeDailyTask } from './DataFunctions';
 import TaskIndicator from './TaskIndicator';
 
 const DailyTaskDisplay = ({ dailyTask }) => {
     const [showTaskEditor, setShowTaskEditor] = useState(false);
-    const { name, duration, status } = dailyTask;
+    const { name, duration, status, task } = dailyTask;
 
     const handleDone = () => {
-
+        completeDailyTask(dailyTask);
     }
 
     const handlePostpone = () => {
