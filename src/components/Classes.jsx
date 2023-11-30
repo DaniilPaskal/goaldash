@@ -57,14 +57,17 @@ export class TaskList {
 
     updateDuration(duration) {
         const durrationDiff = duration - this.duration;
-
         this.duration += duration;
-
         this.goal.updateDuration(durrationDiff);
     }
 
     incrementProgress(progress) {
         this.progress += progress;
+        this.goal.incrementProgress(progress);
+
+        if (this.progress >= this.duration) {
+            this.complete = true;
+        }
     }
 
     find(task) {
@@ -150,6 +153,14 @@ export class Goal {
     update(name, endDate) {
         this.name = name;
         this.endDate = endDate;
+    }
+
+    incrementProgress(progress) {
+        this.progress += progress;
+
+        if (this.progress >= this.duration) {
+            this.complete = true;
+        }
     }
 
     addTaskList(taskList) {
