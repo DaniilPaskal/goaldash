@@ -55,7 +55,7 @@ export class TaskList {
     }
 
     incrementProgress(progress) {
-
+        this.progress += progress;
     }
 
     find(task) {
@@ -144,11 +144,15 @@ export class Goal {
     }
 
     addTaskList(taskList) {
+        const { duration } = taskList;
         this.taskLists.push(taskList);
+        this.duration += duration
     }
 
     updateTaskList(taskList) {
-        
+        const { duration, progress } = taskList;
+        this.duration += duration;
+        this.progress += progress;
     }
 
     removeTaskList(taskList) {
