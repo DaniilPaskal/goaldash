@@ -21,13 +21,18 @@ export class Task {
     }
 
     update(name, duration, locked) {
+        const durationDiff = duration - this.duration;
+
         this.name = name;
         this.duration = duration;
         this.locked = locked;
+
+        this.taskList.updateDuration(durationDiff);
     }
 
     incrementProgress(progress) {
         this.progress += progress;
+        this.taskList.incrementProgress(progress);
 
         if (this.progress >= this.duration) {
             this.complete = true;
@@ -51,7 +56,11 @@ export class TaskList {
     }
 
     updateDuration(duration) {
+        const durrationDiff = duration - this.duration;
+
         this.duration += duration;
+
+        this.goal.updateDuration(durrationDiff);
     }
 
     incrementProgress(progress) {
