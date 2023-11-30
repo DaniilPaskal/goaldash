@@ -94,6 +94,8 @@ export function getDailyTasks(taskList, endDate) {
     return dailyTasks;
 }
 
-export function completeDailyTask(task) {
-    
+export function completeDailyTask(dailyTask) {
+    const { duration, task } = dailyTask;
+
+    task.incrementProgress(duration);
 }
