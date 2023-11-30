@@ -10,24 +10,28 @@ export class DailyTask {
 export class Task {
     constructor(name, duration, locked, taskList) {
         this.name = name;
-        this.duration = {
-            total: duration,
-            complete: 0
-        };
+        this.duration = duration;
+        this.progress = 0;
         this.locked = locked;
         this.taskList = taskList;
         this.comments = [];
+        this.complete = false;
         this.next = null;
         this.prev = null;
     }
 
     update(name, duration, locked) {
         this.name = name;
-        this.duration = {
-            total: duration,
-            complete: 0
-        };
+        this.duration = duration;
         this.locked = locked;
+    }
+
+    incrementProgress(progress) {
+        this.progress += progress;
+
+        if (this.progress >= this.duration) {
+            this.complete = true;
+        }
     }
 }
 
