@@ -8,10 +8,11 @@ const DailyTaskDisplay = ({ dailyTask }) => {
 
     const handleDone = () => {
         completeDailyTask(dailyTask);
+        status = 'ahead';
     }
 
     const handlePostpone = () => {
-
+        status = 'behind';
     }
 
     return (
