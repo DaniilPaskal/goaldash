@@ -1,7 +1,7 @@
 import '../App.css';
 
-const ProgressBar = ({ progress }) => {
-    const percentage = progress + '%';
+const ProgressBar = ({ duration, progress }) => {
+    const percentage = (progress / duration * 100) + '%';
 
     return (
         <div className='progress-bar'>
