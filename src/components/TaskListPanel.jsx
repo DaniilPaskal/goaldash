@@ -9,7 +9,7 @@ import '../styles/TaskManagementPage.css';
 const TaskListPanel = ({ taskList, goal }) => {
     const [showTaskListEditor, setShowTaskListEditor] = useState(false);
     const [showTaskEditor, setShowTaskEditor] = useState(false);
-    const { name, head } = taskList;
+    const { name, head, duration, progress } = taskList;
     const taskArray = [];
     var taskNode = head;
 
@@ -21,6 +21,7 @@ const TaskListPanel = ({ taskList, goal }) => {
     return (
         <div className='tasklist-panel'>
             <h1>{name}</h1>
+            <ProgressBar duration={duration} progress={progress} />
 
             <button onClick={() => setShowTaskListEditor(true)}>Edit task list</button>
             <TaskListEditor show={showTaskListEditor} setShow={setShowTaskListEditor} goal={goal} taskList={taskList} />
