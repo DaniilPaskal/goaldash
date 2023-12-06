@@ -9,17 +9,13 @@ import '../styles/TaskManagementPage.css';
 const TaskListPanel = ({ taskList, goal }) => {
     const [showTaskListEditor, setShowTaskListEditor] = useState(false);
     const [showTaskEditor, setShowTaskEditor] = useState(false);
+    const [taskArray, setTaskArray] = useState(taskList.getTaskArray());
     const { name, head, duration, progress } = taskList;
-    const taskArray = [];
-    var taskNode = head;
-
-    while (taskNode) {
-        taskArray.push(taskNode);
-        taskNode = taskNode.next;
-    }
 
     const handleDragEnd = () => {
-
+        taskList.remove(result.source.index);
+        taskList.insert(result.destination.index);
+        setTaskArray(taskList.getTaskArray());
     }
 
     return (
