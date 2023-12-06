@@ -18,6 +18,10 @@ const TaskListPanel = ({ taskList, goal }) => {
         taskNode = taskNode.next;
     }
 
+    const handleDragEnd = () => {
+
+    }
+
     return (
         <div className='tasklist-panel'>
             <h1>{name}</h1>
@@ -29,7 +33,7 @@ const TaskListPanel = ({ taskList, goal }) => {
             <button onClick={() => setShowTaskEditor(true)}>Add task</button>
             <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} taskList={taskList} />
 
-            <DragDropContext>
+            <DragDropContext onDragEnd={handleDragEnd}>
                 <Droppable droppableId='taskList'>
                     {taskArray.map((task) => {
                         return(
