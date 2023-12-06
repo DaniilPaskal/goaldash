@@ -137,6 +137,17 @@ export class TaskList {
         this.progress -= removeTask.progress;
         this.length--;
     }
+
+    getTaskArray() {
+        const taskArray = [];
+
+        while (taskNode) {
+            taskArray.push(taskNode);
+            taskNode = taskNode.next;
+        }
+
+        return taskArray;
+    }
 }
 
 export class Goal {
