@@ -140,6 +140,7 @@ export class TaskList {
 
     getTaskArray() {
         const taskArray = [];
+        var taskNode = this.head;
 
         while (taskNode) {
             taskArray.push(taskNode);
