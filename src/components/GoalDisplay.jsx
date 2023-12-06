@@ -7,7 +7,9 @@ const GoalDisplay = ({ goal }) => {
         <div>
             <h2>{name}</h2>
             {taskLists.map((taskList) => {
-                <TaskListDisplay taskList={taskList} key={taskList} />
+                return (
+                    <TaskListDisplay taskList={taskList} key={taskList} />
+                );
             })}
         </div>
     );
