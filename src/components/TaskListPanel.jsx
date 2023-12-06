@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DragDropContext, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import TaskListEditor from "./TaskListEditor";
 import TaskEditor from "./TaskEditor";
 import TaskPanel from "./TaskPanel";
@@ -29,12 +29,18 @@ const TaskListPanel = ({ taskList, goal }) => {
             <button onClick={() => setShowTaskEditor(true)}>Add task</button>
             <TaskEditor show={showTaskEditor} setShow={setShowTaskEditor} taskList={taskList} />
 
-            {taskArray.map((task) => {
-                return(
-                    <TaskPanel task={task} taskList={taskList} key={task} />
-                )
-            })}
-            
+            <DragDropContext>
+                <Droppable droppableId='taskList'>
+                    {taskArray.map((task) => {
+                        return(
+                            <Draggable draggableId={task.name}>
+                                <TaskPanel task={task} taskList={taskList} key={task} />
+                            </Draggable>
+                        )
+                    })}
+                </Droppable>
+            </DragDropContext>
+
         </div>
     );
 }
