@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import TaskListEditor from "./TaskListEditor";
 import TaskEditor from "./TaskEditor";
@@ -10,9 +10,13 @@ const TaskListPanel = ({ taskList, goal }) => {
     const [showTaskListEditor, setShowTaskListEditor] = useState(false);
     const [showTaskEditor, setShowTaskEditor] = useState(false);
     const [taskArray, setTaskArray] = useState(taskList.getTaskArray());
-    const { name, head, duration, progress } = taskList;
+    const { name, duration, progress } = taskList;
 
-    const handleDragEnd = () => {
+    const handleDragEnd = (result) => {
+        if (!result.destination) {
+            return;
+        }
+
         taskList.remove(result.source.index);
         taskList.insert(result.destination.index);
         setTaskArray(taskList.getTaskArray());
@@ -31,13 +35,21 @@ const TaskListPanel = ({ taskList, goal }) => {
 
             <DragDropContext onDragEnd={handleDragEnd}>
                 <Droppable droppableId='taskList'>
-                    {taskArray.map((task) => {
-                        return(
-                            <Draggable draggableId={task.name}>
-                                <TaskPanel task={task} taskList={taskList} key={task} />
-                            </Draggable>
-                        )
-                    })}
+                    {(provided) => (
+                        <ul {...provided.droppableProps} ref={provided.innerRef}>
+                            {taskArray.map((task) => {
+                                return (
+                                    <Draggable draggableId={task.name}>
+                                        {(provided) => (
+                                            <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                <TaskPanel task={task} taskList={taskList} key={task} />
+                                            </li>
+                                        )}
+                                    </Draggable>
+                                );
+                            })}
+                        </ul>
+                    )} 
                 </Droppable>
             </DragDropContext>
 
