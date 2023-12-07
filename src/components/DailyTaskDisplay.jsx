@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { completeDailyTask } from './DataFunctions';
+import TaskEditor from './TaskEditor';
 import TaskIndicator from './TaskIndicator';
 
 const DailyTaskDisplay = ({ dailyTask }) => {
