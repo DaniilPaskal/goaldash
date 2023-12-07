@@ -6,6 +6,7 @@ import TaskIndicator from './TaskIndicator';
 const DailyTaskDisplay = ({ dailyTask }) => {
     const [showTaskEditor, setShowTaskEditor] = useState(false);
     const { name, duration, status, task } = dailyTask;
+    const { taskList } = task;
 
     const handleDone = () => {
         completeDailyTask(dailyTask);
