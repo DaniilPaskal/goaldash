@@ -1,5 +1,6 @@
 import { getDailyTasks } from "./DataFunctions";
 import DailyTaskDisplay from "./DailyTaskDisplay";
+import '../styles/Dashboard.css';
 
 const TaskListDisplay = ({ taskList }) => {
     const { name } = taskList;
