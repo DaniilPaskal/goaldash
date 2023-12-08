@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { completeDailyTask } from './DataFunctions';
 import TaskEditor from './TaskEditor';
 import TaskIndicator from './TaskIndicator';
+import '../styles/Dashboard.css';
 
 const DailyTaskDisplay = ({ dailyTask }) => {
     const [showTaskEditor, setShowTaskEditor] = useState(false);
