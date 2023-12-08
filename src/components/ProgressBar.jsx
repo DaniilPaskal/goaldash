@@ -1,4 +1,4 @@
-import '../App.css';
+import '../styles/Dashboard.css';
 
 const ProgressBar = ({ duration, progress }) => {
     const percentage = (progress / duration * 100) + '%';
