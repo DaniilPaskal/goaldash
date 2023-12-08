@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/Dashboard.css';
 
 const Checkbox = ({ name, handleChange, checked }) => {
     return (
