@@ -1,4 +1,5 @@
 import TaskListDisplay from "./TaskListDisplay";
+import '../styles/Dashboard.css';
 
 const GoalDisplay = ({ goal }) => {
     const { name, taskLists } = goal;
