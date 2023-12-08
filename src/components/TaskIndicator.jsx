@@ -1,4 +1,4 @@
-
+import '../styles/Dashboard.css';
 
 const TaskIndicator = ({ status }) => {
     const colors = {
