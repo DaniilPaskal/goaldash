@@ -1,4 +1,8 @@
 :root {
     --accent-green: #07d200;
+    --background-black: rgba(0, 0, 0, 0.4);
 }
 
+.modal {
+    background-color: var(--background-black);
+}
