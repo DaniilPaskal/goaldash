@@ -1,6 +1,6 @@
 import '../styles/Dashboard.css';
 
-const TaskIndicator = ({ status }) => {
+const ProgressIndicator = ({ status }) => {
     const colors = {
         ahead: 'rgb(83, 216, 50)',
         onTrack: 'rgb(55, 178, 226)',
@@ -9,8 +9,8 @@ const TaskIndicator = ({ status }) => {
     const color = colors[status];
 
     return (
-        <div className='task-indicator' style={{ color: color }} />
+        <div className='progress-indicator' style={{ color: color }} />
     );
 }
 
-export default TaskIndicator;
+export default ProgressIndicator;
