@@ -1,25 +1,18 @@
 :root {
     --accent-green: #07d200;
+    --text-white: rgb(255, 255, 255);
 }
 
 .task-management-page {
     padding: 1rem;
 }
 
-.goal-panel {
+div {
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.15) 0 5px 10px;
     padding: 0.5rem;
 }
 
-.tasklist-panel {
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 10px;
-    padding: 0.5rem;
-}
-
-.task-panel {
-    border-radius: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 10px;
-    padding: 0.5rem;
+button {
+    background-color: var(--accent-green);
 }
