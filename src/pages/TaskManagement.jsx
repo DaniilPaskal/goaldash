@@ -10,7 +10,7 @@ const TaskManagement = () => {
     const goals = useGoals();
 
     return (
-        <div>
+        <div className='task-management-page'>
             <Link to='/dashboard'>Dashboard</Link>
             
             <button onClick={() => setShow(true)}>Create goal</button>
