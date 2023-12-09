@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { completeDailyTask } from './DataFunctions';
 import TaskEditor from './TaskEditor';
-import TaskIndicator from './TaskIndicator';
+import ProgressIndicator from './ProgressIndicator';
 import '../styles/Dashboard.css';
 
 const DailyTaskDisplay = ({ dailyTask }) => {
@@ -19,11 +19,11 @@ const DailyTaskDisplay = ({ dailyTask }) => {
     }
 
     return (
-        <div>
+        <div className='daily-task-display'>
             <h3>{name}</h3>
             <p>{duration}</p>
             <div>
-                <TaskIndicator status={status} />
+                <ProgressIndicator status={status} />
                 <button onClick={handleDone}>Done</button>
                 <button onClick={handlePostpone}>Postpone</button>
                 <button onClick={() => setShowTaskEditor(true)}>Edit</button>
