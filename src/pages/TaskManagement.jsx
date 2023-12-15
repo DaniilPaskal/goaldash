@@ -11,7 +11,9 @@ const TaskManagement = () => {
 
     return (
         <div className='task-management-page'>
-            <Link to='/dashboard'>Dashboard</Link>
+            <div className='nav'>
+                <Link to='/dashboard'>Dashboard</Link>
+            </div>
             
             <button onClick={() => setShow(true)}>Create goal</button>
             <GoalEditor show={show} setShow={setShow} />
