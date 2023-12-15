@@ -83,7 +83,7 @@ const LandingPage = () => {
             attachments to tasks for additional context and reference.
           </li>
           <li>
-            <b>Customization:</b>Personalize the app's interface and settings
+            <b>Customization:</b> Personalize the app's interface and settings
             to suit your preferences. Choose from different themes and layouts.
           </li>
           <li>
