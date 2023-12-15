@@ -4,6 +4,7 @@
 }
 
 .task-management-page {
+    justify-content: center;
     padding: 1rem;
 }
 
@@ -15,5 +16,7 @@
 
 .task-management-page button {
     background-color: var(--accent-green);
+    border-radius: 1rem;
     color: var(--text-white);
+    padding: 0.5rem;
 }
