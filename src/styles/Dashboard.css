@@ -2,6 +2,10 @@
     --accent-green: #07d200;
 }
 
+.dashboard {
+    justify-content: center;
+}
+
 .goal-display {
     
 }
