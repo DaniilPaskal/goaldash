@@ -5,6 +5,7 @@
 
 .modal {
     background-color: var(--background-black);
+    text-align: center;
 }
 
 .editor {
