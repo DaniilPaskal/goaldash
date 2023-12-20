@@ -19,9 +19,13 @@
 }
 
 .progress-bar {
-
+    border-radius: 50%;
+    height: 1rem;
+    width: 80%;
 }
 
 .progress-indicator {
-    
+    border-radius: 50%;
+    height: auto;
+    width: 2rem;
 }
