@@ -5,7 +5,7 @@ const GoalDisplay = ({ goal }) => {
     const { name, taskLists } = goal;
     
     return (
-        <div>
+        <div className='display'>
             <h2>{name}</h2>
             {taskLists.map((taskList) => {
                 return (
