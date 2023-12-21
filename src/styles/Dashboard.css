@@ -6,6 +6,12 @@
     text-align: center;
 }
 
+.display {
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 5px 10px;
+    padding: 0.5rem;
+}
+
 .goal-display {
     
 }
