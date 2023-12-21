@@ -7,7 +7,7 @@ const TaskListDisplay = ({ taskList }) => {
     const dailyTasks = getDailyTasks(taskList);
     
     return (
-        <div>
+        <div className='display'>
             <h3>{name}</h3>
             {dailyTasks.map((dailyTask) => {
                 <DailyTaskDisplay dailyTask={dailyTask} />
