@@ -19,7 +19,7 @@ const DailyTaskDisplay = ({ dailyTask }) => {
     }
 
     return (
-        <div className='daily-task-display'>
+        <div className='display daily-task-display'>
             <h3>{name}</h3>
             <p>{duration}</p>
             <div>
